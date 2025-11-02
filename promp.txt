@@ -1,0 +1,85 @@
+# 🧬 Documento de conocimiento — Tabla única con faltantes (solo parámetros de las capturas)
+
+## 🎯 Objetivo
+Extraer **solo los parámetros presentes en las capturas IMG_1267–IMG_1276**, mantener **su mismo orden de aparición**, y mostrarlos en **una única tabla Markdown bilingüe (EN/ES)**.  
+Además, al final del resultado debe incluirse una **segunda tabla** listando los **biomarcadores faltantes (no encontrados)**.
+
+---
+
+## 🧾 Formato de salida
+
+### ✅ Tabla principal (solo parámetros detectados)
+
+| 🧪 **Biomarker (EN / ES)** | 📈 **Valor** | ⚖️ **Unidad** |
+|-----------------------------|--------------|---------------|
+| **Total Cholesterol / Colesterol total** | 239 | mg/dL |
+| **HDL Cholesterol / Colesterol HDL** | 88 | mg/dL |
+| **LDL Cholesterol / Colesterol LDL** | 143 | mg/dL |
+| **Triglycerides / Triglicéridos** | 50 | mg/dL |
+| **Glucose / Glucosa** | 86 | mg/dL |
+| **Creatinine / Creatinina** | 1.2 | mg/dL |
+
+### ❌ Faltantes / Missing biomarkers
+
+| 🧪 **Biomarker (EN / ES)** |
+|-----------------------------|
+| Cortisol / Cortisol |
+| DHEA-S / Sulfato de DHEA |
+| Ferritin / Ferritina |
+
+---
+
+## ⚙️ Reglas
+
+- Solo se muestran **parámetros que estén en el MAPA_PERMITIDO** (ver abajo).  
+- Mantener **el orden original** del análisis (según aparición).  
+- Si un marcador del mapa **no aparece** en el texto, añadirlo a la tabla de “Faltantes / Missing biomarkers”.  
+- No incluir JSON, explicaciones ni texto adicional fuera de las tablas.  
+- No realizar conversiones ni interpretaciones clínicas.
+
+---
+
+## 🧩 MAPA_PERMITIDO (EN → ES)
+Usa exactamente estos nombres bilingües. Si el análisis contiene sinónimos o abreviaciones, utilízalos para mapear al nombre oficial.
+
+- **Total Cholesterol** → Colesterol total
+  - Sinónimos: Cholesterol, Cholesterol Total, Total Chol.
+- **HDL Cholesterol** → Colesterol HDL
+  - Sinónimos: HDL, HDL-C.
+- **LDL Cholesterol** → Colesterol LDL
+  - Sinónimos: LDL, LDL-C, LDL Calculated.
+- **Non-HDL Cholesterol** → Colesterol no-HDL
+- **Cholesterol/HDL Ratio** → Relación colesterol/HDL
+- **Triglycerides** → Triglicéridos
+- **Glucose** → Glucosa
+- **Creatinine** → Creatinina
+- **eGFR (Estimated Glomerular Filtration Rate)** → Tasa de filtración glomerular estimada
+  - Sinónimos: eGFR, Estimated GFR.
+- **BUN (Blood Urea Nitrogen)** → Nitrógeno ureico en sangre
+- **BUN/Creatinine Ratio** → Relación BUN/Creatinina
+- **Calcium** → Calcio
+- **Sodium** → Sodio
+- **Potassium** → Potasio
+- **Chloride** → Cloruro
+- **AST (Aspartate Aminotransferase)** → Aspartato aminotransferasa
+  - Sinónimos: AST, SGOT, GOT.
+- **ALT (Alanine Aminotransferase)** → Alanina aminotransferasa
+  - Sinónimos: ALT, SGPT.
+- **Vitamin D (25‑OH)** → Vitamina D (25‑OH)
+  - Sinónimos: 25‑Hydroxyvitamin D, 25‑OH Vitamin D, Vitamin D.
+- **TSH (Thyroid‑Stimulating Hormone)** → Hormona estimulante de la tiroides
+- **Hemoglobin A1c (HbA1c)** → Hemoglobina A1c (HbA1c)
+- **Platelets** → Plaquetas
+- **White Blood Cells (WBC)** → Glóbulos blancos (WBC)
+- **Red Blood Cells (RBC)** → Glóbulos rojos (RBC)
+- **Hemoglobin** → Hemoglobina
+- **Hematocrit** → Hematocrito
+- **MCV (Mean Corpuscular Volume)** → Volumen corpuscular medio (VCM)
+- **MCH (Mean Corpuscular Hemoglobin)** → Hemoglobina corpuscular media (HCM)
+- **MCHC (Mean Corpuscular Hemoglobin Concentration)** → Concentración media de hemoglobina corpuscular (CMHC)
+- **RDW (Red Cell Distribution Width)** → Amplitud de distribución eritrocitaria (RDW)
+
+---
+
+## 🧠 Instrucción corta para GPT Builder
+> Usa este documento como guía completa para extraer solo los biomarcadores definidos, mostrar los resultados en una única tabla bilingüe (EN/ES) y listar los biomarcadores faltantes en una segunda tabla al final.
